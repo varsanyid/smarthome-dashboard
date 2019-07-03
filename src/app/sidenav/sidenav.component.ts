@@ -10,10 +10,10 @@ export class SidenavComponent {
   constructor() { }
 
   items = [ 
-    { name: "Dashboard", component: "/dashboard"},
-    { name: "Devices", component: "/devices"}
+    { name: 'Dashboard', component: '/dashboard'},
+    { name: 'Devices', component: '/devices'}
   ];
 
-  header = "SmartHome"
+  header = 'SmartHome'
   
 }
