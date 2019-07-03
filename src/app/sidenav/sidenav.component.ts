@@ -9,11 +9,11 @@ export class SidenavComponent {
 
   constructor() { }
 
-  items = [ 
+  items = [
     { name: 'Dashboard', component: '/dashboard'},
     { name: 'Devices', component: '/devices'}
   ];
 
-  header = 'SmartHome'
-  
+  header = 'SmartHome';
+
 }

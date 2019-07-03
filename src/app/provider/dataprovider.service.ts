@@ -18,20 +18,20 @@ export class DataProviderService {
       1: 50,
       30: 1400,
       365: 16500
-    }
+    };
 
     return [
       {
-        'name': 'Average UK',
-        'value': averageUkUsage[scale]
+        name: 'Average UK',
+        value: averageUkUsage[scale]
       },
       {
-        'name': 'You',
-        'value': this.consumptionService.getTotalUsage(
+        name: 'You',
+        value: this.consumptionService.getTotalUsage(
           this.deviceStorageService.getDevices(), scale
         )
       }
-    ]
+    ];
   }
 
   public providePrice = (scale: Scale): number => {
@@ -45,19 +45,19 @@ export class DataProviderService {
     );
     return [
       {
-        'name': 'Electricity',
-        'value': applianceRate.electricity
+        name: 'Electricity',
+        value: applianceRate.electricity
       },
       {
-        'name': 'Gas',
-        'value': applianceRate.gas
+        name: 'Gas',
+        value: applianceRate.gas
       },
-    ]
+    ];
   }
 
   private hourGenerator = () => {
     const hours = [];
-    for(let i = 1; i < 25; i++) {
+    for (let i = 1; i < 25; i++) {
       hours.push(i.toString());
     }
     return hours;
@@ -86,19 +86,19 @@ export class DataProviderService {
       1: this.hourGenerator,
       30: this.monthGenerator,
       365: this.yearGenerator
-    }
-    const data: Array<any> = this.consumptionService.getEstimateFor(xScaleGenerator[scale], scale, 
+    };
+    const data: Array<any> = this.consumptionService.getEstimateFor(xScaleGenerator[scale], scale,
       this.deviceStorageService.getDevices()
     );
     const estimate = [{
       name: 'Estimated usage',
       series: []
-    }]
-    for(let i = 0; i < data.length; i++) {
+    }];
+    for (let i = 0; i < data.length; i++) {
       estimate[0].series.push({
         name: data[i].date,
         value: Math.trunc(data[i].estimate)
-      })
+      });
     }
     return estimate;
     }

@@ -11,7 +11,7 @@ export class DeviceListComponent implements OnInit {
 
   constructor(private deviceStorageService: LocalStorageService) { }
 
-  devices: Array<Device> = []; 
+  devices: Array<Device> = [];
 
   ngOnInit() {
     this.devices = this.deviceStorageService.getDevices();

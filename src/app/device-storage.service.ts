@@ -9,8 +9,8 @@ export class LocalStorageService {
 
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) { }
 
-  DEVICE_KEY = "_devices"
-  DATA_KEY = "_historical_data"
+  DEVICE_KEY = '_devices';
+  DATA_KEY = '_historical_data';
 
   public storeDevice = (device: Device): void => {
     const storedDevices: Array<string> = this.storage.get(this.DEVICE_KEY) || [];

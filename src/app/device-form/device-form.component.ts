@@ -17,13 +17,13 @@ export class DeviceFormComponent {
 
   device = new Device(undefined, undefined, undefined, undefined, undefined);
 
-  types = ["Gas", "Electricity"];
+  types = ['Gas', 'Electricity'];
 
   onSubmit = () => {
     this.deviceStorageService.storeDevice(this.device);
   }
 
-  estimateDailyUsage = (wattage: number) : number => {
+  estimateDailyUsage = (wattage: number): number => {
     return wattage ? this.consumptionService.convertWtokWh(wattage) : undefined;
   }
 

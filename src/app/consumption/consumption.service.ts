@@ -38,7 +38,7 @@ export class ConsumptionService {
     const estimates = [];
     for (let i = 0; i < xScale.length; i++) {
       const date = xScale[i];
-      const estimate = i === 0 ? (+total/xScale.length) : estimates[i - 1].estimate + (+total/xScale.length);
+      const estimate = i === 0 ? (+total / xScale.length) : estimates[i - 1].estimate + (+total / xScale.length);
       estimates.push({ date, estimate });
     }
     return estimates;

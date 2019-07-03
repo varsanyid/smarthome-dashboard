@@ -10,7 +10,7 @@ describe('DeviceListComponent', () => {
   beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [ DeviceListComponent ],
-      providers:[
+      providers: [
         LocalStorageService
       ]
     })

@@ -9,7 +9,7 @@ import { DataProviderService } from '../provider/dataprovider.service';
 })
 export class DashboardComponent {
 
-  constructor(private dataProviderService: DataProviderService){
+  constructor(private dataProviderService: DataProviderService) {
     this.fetchChartData();
   }
 
@@ -23,8 +23,8 @@ export class DashboardComponent {
     {
       name: 'Yearly', value: 365
     }
-  ]
-  
+  ];
+
   monthlyUsage: Array<any>;
   applianceRate: Array<any>;
   estimate: Array<any>;

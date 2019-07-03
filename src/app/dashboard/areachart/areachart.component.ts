@@ -24,6 +24,6 @@ export class AreachartComponent {
 
   // line, area
   autoScale = true;
-  
+
 
 }
