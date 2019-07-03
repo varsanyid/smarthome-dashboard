@@ -22,23 +22,23 @@ export class ConsumptionService {
 
   public getApplianceRates = (devices: Array<Device>) => {
     return devices.reduce((acc, curr) => {
-      let data : { electricity:number;  gas: number; } = { electricity: acc.electricity, gas: acc.gas };
+      const data: { electricity: number;  gas: number; } = { electricity: acc.electricity, gas: acc.gas };
       if (curr.type === 'Electricity') {
         data.electricity = +data.electricity + +curr.wattage;
       } else {
         data.gas = data.gas + curr.wattage;
       }
       return data;
-    }, { electricity: 0, gas: 0 })
+    }, { electricity: 0, gas: 0 });
   }
 
   public getEstimateFor = (generator: () => Array<string>, scale: Scale, devices: Array<Device>): Array<any> => {
     const xScale: Array<string> = generator();
     const total = this.getTotalUsage(devices, scale);
     const estimates = [];
-    for(let i = 0; i < xScale.length; i++) {
+    for (let i = 0; i < xScale.length; i++) {
       const date = xScale[i];
-      const estimate = i == 0 ? (+total/xScale.length) : estimates[i - 1].estimate + (+total/xScale.length);
+      const estimate = i === 0 ? (+total/xScale.length) : estimates[i - 1].estimate + (+total/xScale.length);
       estimates.push({ date, estimate });
     }
     return estimates;
