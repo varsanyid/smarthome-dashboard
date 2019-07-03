@@ -1,0 +1,1 @@
+export type Scale = 1 | 30 | 365;

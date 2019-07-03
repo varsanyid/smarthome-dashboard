@@ -1,0 +1,36 @@
+<section>
+    <div class="col-md-12 pt-4 mt-3">
+        <h3 class="float-left">Energy Dashboard</h3>
+        <select class="switch-toggle float-left" (change)="onscaleChange($event.target.value)">
+            <option *ngFor="let value of switchValues" value="{{value.value}}" name="scale">
+                {{value.name}}
+            </option>
+        </select>
+    </div>
+    <section class="row float-left align-self-center">
+        <div class="col-md-4 chart-item">
+            <app-barchart 
+                [data]="monthlyUsage" 
+                [title]="'Average UK usage'">
+            </app-barchart>
+        </div>
+        <div class="col-md-4 chart-item">
+            <app-piechart 
+                [data]="applianceRate"
+                [title]="'Proportions'">
+            </app-piechart>
+        </div>
+        <div class="col-md-4 chart-item">
+            <app-linechart 
+                [data]="estimate"
+                [title]="'Estimate'">
+            </app-linechart>
+        </div>
+        <div class="col-md-4 chart-item">
+                <app-price-calculator
+                    [price]="price"
+                    [title]="'Estimated price'">
+                </app-price-calculator>
+        </div>
+    </section>
+</section>

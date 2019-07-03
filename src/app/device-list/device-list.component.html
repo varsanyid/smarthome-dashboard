@@ -1,0 +1,23 @@
+<section>
+    <div class="col-md-12 pt-4 mt-3">
+        <h3>Your devices</h3>
+    </div>
+    <div class="row">
+        <div class="chart-item col-md-2" *ngFor="let device of devices">
+            <div class="device-card-header">
+                <p>
+                    {{ device.name }}
+                </p>
+            </div>
+            <div>
+                <label>Type</label>
+                <p>{{ device.type }}</p>
+                <label>Wattage</label>
+                <p>{{ device.wattage }}</p>
+                <label>Daily usage</label>
+                <p>{{ device.avgUsagePerDay }}</p>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" routerLink="/devices/create">Add device</button>
+</section>

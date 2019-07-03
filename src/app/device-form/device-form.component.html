@@ -1,0 +1,31 @@
+<section class="col-md-4 align-self-center">
+    <div class="col-md-12 pt-4 mt-3">
+        <h3>Add device</h3>  
+    </div>
+    <form #deviceForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required
+            [(ngModel)]="device.name">
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <select name="type" id="type" class="form-control" 
+            [(ngModel)]="device.type">
+                <option *ngFor="let type of types">{{ type }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="wattage">Wattage</label>
+            <input type="text" class="form-control" id="wattage" name="wattage"
+            [(ngModel)]="device.wattage">
+        </div>
+        <div class="form-group">
+            <label for="avgUsagePerDay">Average usage per day in hours</label>
+            <input type="text" class="form-control" id="avgUsagePerDay" name="avgUsagePerDay"
+            [(ngModel)]="device.avgUsagePerDay">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <p>Estimated daily kWh is: {{ estimateDailyUsage(device.wattage)}}</p>
+    </form>
+</section>

@@ -1,0 +1,9 @@
+.price-wrapper {
+    left: 40%;
+    margin-top:15%;
+    font-size: 45px;
+    text-align: center;
+}
+.price {
+    display: inline-block;
+}

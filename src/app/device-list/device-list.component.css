@@ -1,0 +1,7 @@
+.device-card-header {
+    border-bottom: 1px solid #007bff;
+    margin: 5% 0 5% 0;
+}
+.device-card-header p {
+    font-weight: bold;
+}

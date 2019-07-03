@@ -1,0 +1,12 @@
+.switch-toggle {
+    list-style: none;
+    padding: 5px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: auto;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgba(29,27,65);
+    margin-left: 1%;
+}

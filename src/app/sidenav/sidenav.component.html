@@ -1,0 +1,12 @@
+<div class="col-md-12 pt-4 mt-3 text-center">
+    <h3>
+        {{ header }}
+    </h3>
+</div>
+<nav class="col-md-2 sidebar">
+    <ul class="side-nav">
+        <li *ngFor="let item of items">
+            <a routerLink="{{item.component}}">{{ item.name }}</a>
+        </li>
+    </ul>
+</nav>
