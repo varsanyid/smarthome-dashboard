@@ -22,12 +22,12 @@ export class DataProviderService {
 
     return [
       {
-        'name': 'Average UK',
-        'value': averageUkUsage[scale]
+        "name": "Average UK",
+        "value": averageUkUsage[scale]
       },
       {
-        'name': 'You',
-        'value': this.consumptionService.getTotalUsage(
+        "name": "You",
+        "value": this.consumptionService.getTotalUsage(
           this.deviceStorageService.getDevices(), scale
         )
       }
@@ -45,12 +45,12 @@ export class DataProviderService {
     );
     return [
       {
-        'name': 'Electricity',
-        'value': applianceRate.electricity
+        "name": "Electricity",
+        "value": applianceRate.electricity
       },
       {
-        'name': 'Gas',
-        'value': applianceRate.gas
+        "name": "Gas",
+        "value": applianceRate.gas
       },
     ]
   }
@@ -77,27 +77,27 @@ export class DataProviderService {
   }
 
   private yearGenerator = () => {
-    return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-    'October', 'November', 'December'];
+    return ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+    "October", "November", "December"];
   }
 
   public provideEstimate(scale: Scale): Array<any> {
-    const xScaleGenerator = {
+    const estimateScaleGenerator = {
       1: this.hourGenerator,
       30: this.monthGenerator,
       365: this.yearGenerator
     }
-    const data: Array<any> = this.consumptionService.getEstimateFor(xScaleGenerator[scale], scale, 
+    const data: Array<any> = this.consumptionService.getEstimateFor(estimateScaleGenerator[scale], scale, 
       this.deviceStorageService.getDevices()
     );
     const estimate = [{
-      name: 'Estimated usage',
-      series: []
+      "name": "Estimated usage",
+      "series": []
     }]
     for(let i = 0; i < data.length; i++) {
       estimate[0].series.push({
-        name: data[i].date,
-        value: Math.trunc(data[i].estimate)
+        "name": data[i].date,
+        "value": Math.trunc(data[i].estimate)
       })
     }
     return estimate;

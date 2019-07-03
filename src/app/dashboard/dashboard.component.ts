@@ -15,13 +15,13 @@ export class DashboardComponent {
 
   switchValues = [
     {
-      name: 'Daily', value: 1
+      name: "Daily", value: 1
     },
     {
-      name: 'Monthly', value: 30
+      name: "Monthly", value: 30
     },
     {
-      name: 'Yearly', value: 365
+      name: "Yearly", value: 365
     }
   ]
   
